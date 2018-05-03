@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <betaout_amplify_config translate="label" module="betaout_amplify">
+            <!--<label>Betaout Plugin</label>-->
+            <label><![CDATA[<div style="position: absolute; "><img id="amp_block" src="https://s3.amazonaws.com/www.betaoutcdn.com/logo/small.png" alt="" border="0" style=""/></div>&nbsp;
+       <script>
+      var n = SKIN_URL.indexOf("adminhtml");
+      $('amp_block').src ="https://s3.amazonaws.com/www.betaoutcdn.com/logo/small.png";
+      </script> ]]></label>
+            <sort_order>0</sort_order>
+        </betaout_amplify_config>
+    </tabs>
+    <sections>
+        <betaout_amplify_options translate="label" module="betaout_amplify">
+            <label>Betaout Settings</label>
+            <tab>betaout_amplify_config</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <logo>
+                     <label>About Betaout</label>
+                    <frontend_type>text</frontend_type>
+                    <frontend_model>Betaout_Amplify_Block_Adminhtml_System_Config_Logo</frontend_model>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </logo>
+                <about>
+                     <label>About Betaout</label>
+                    <frontend_type>text</frontend_type>
+                    <frontend_model>Betaout_Amplify_Block_Adminhtml_System_Config_About</frontend_model>
+                    <sort_order>10000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </about>
+                <settings translate="label">
+                    <label>Betaout Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <expanded>1</expanded>
+                    <fields>
+                        <amplify_projectId>
+                            <label>Betaout ProjectId</label>
+                            <frontend_type>text</frontend_type>
+                            <!--<backend_model>Betaout/verify</backend_model>-->
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                    
+                        </amplify_projectId>
+                       <amplify_key>
+                            <label>Betaout API Key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                    
+                        </amplify_key>
+                         <amplify_debug>
+                            <label>DEBUG</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>                    
+                        </amplify_debug>
+                    </fields>
+                </settings>
+
+            </groups>
+        </betaout_amplify_options>
+        
+    </sections>     
+</config>

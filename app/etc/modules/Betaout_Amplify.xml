@@ -1,0 +1,14 @@
+<config>
+    <modules>
+        <Betaout_Amplify>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Adminhtml/>
+                <Mage_Customer/>
+                <Mage_Checkout/>
+                <Mage_Sales/>
+            </depends>
+        </Betaout_Amplify>
+    </modules>
+</config>

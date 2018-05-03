@@ -1,0 +1,62 @@
+<?php
+//$startTime = microtime(true);
+try {
+   $identity="";
+   $customer_id="";
+    if (Mage::getSingleton('customer/session')->isLoggedIn()) {
+
+        $c = Mage::getSingleton('customer/session')->getCustomer();
+        $customer = Mage::getModel('customer/customer')->load($c->getId());
+        $identity = $customer->getEmail();
+        $customer_id = $customer->getId();
+    }
+    else {
+        $identity= Mage::getModel('core/cookie')->get('amplify_email');
+      }
+	  $productId=0;
+      $categoryId=0;
+      $brandname="";
+      if (Mage::registry('current_category'))
+      {
+        $categoryId=Mage::registry('current_category')->getId();
+       }
+       if(Mage::registry('current_product'))
+        {
+          $product = Mage::registry('current_product');
+          $productId=$product->getId();
+          $cat=$product->getCategoryIds();
+          $categoryId=$cat[0];
+        }
+   
+        ?>
+
+		
+        <script type="text/javascript">
+            var _bout = _bout || [];
+            var _boutAKEY = '<?php echo Mage::getStoreConfig("betaout_amplify_options/settings/amplify_key"); ?>';
+            var _boutPID = '<?php echo Mage::getStoreConfig("betaout_amplify_options/settings/amplify_projectId"); ?>';
+               
+           
+            var d = document, f = d.getElementsByTagName("script")[0], _sc = d.createElement("script");
+            _sc.type = "text/javascript";
+            _sc.async = true;
+            _sc.src = "//js.betaout.com/jal-v2.min.js";
+            f.parentNode.insertBefore(_sc, f);
+            _bout.push(["identify", {
+                    "customer_id": "",
+                    "email": "",
+                    "phone": "",
+                    "device_id": ""
+                },
+				{productId:"<?php echo $productId;?>",categoryId:"<?php echo $categoryId;?>" ,brandName:""}
+            ]);
+         </script>
+
+        <?php
+ 
+} catch (Exception $ex) {
+    
+}
+//$endTime = microtime(true);
+//echo "total Execution time ==" . ($endTime - $startTime);
+?>
